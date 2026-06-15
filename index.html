@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emily Duffee — Healthcare Product Marketer</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0B1F3A;
+  --teal:#1D9E75;
+  --teal-lt:#E1F5EE;
+  --sand:#F5F3EE;
+  --mid:#5F5E5A;
+  --border:#D3D1C7;
+  --white:#fff;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--navy);line-height:1.6}
+
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 2.5rem;border-bottom:0.5px solid var(--border);position:sticky;top:0;background:rgba(255,255,255,0.96);backdrop-filter:blur(8px);z-index:100}
+.nav-name{font-family:'DM Serif Display',serif;font-size:1.1rem;letter-spacing:0.01em}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{text-decoration:none;color:var(--mid);font-size:0.875rem;font-weight:400;transition:color 0.2s}
+.nav-links a:hover{color:var(--teal)}
+.nav-resume{background:var(--navy);color:var(--white)!important;padding:0.45rem 1rem;border-radius:4px;font-size:0.8rem!important;transition:background 0.2s!important}
+.nav-resume:hover{background:var(--teal)!important}
+
+.hero{padding:5rem 2.5rem 4rem;max-width:860px;margin:0 auto}
+.hero-eyebrow{font-size:0.8rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:1.25rem}
+.hero-headline{font-family:'DM Serif Display',serif;font-size:clamp(2.2rem,5vw,3.5rem);line-height:1.15;margin-bottom:1.5rem;color:var(--navy)}
+.hero-headline em{font-style:italic;color:var(--teal)}
+.hero-sub{font-size:1.1rem;color:var(--mid);max-width:600px;line-height:1.75;margin-bottom:2rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:0.75rem;align-items:center}
+.hero-cta{display:inline-flex;align-items:center;gap:0.5rem;background:var(--navy);color:var(--white);text-decoration:none;padding:0.75rem 1.5rem;border-radius:4px;font-size:0.9rem;font-weight:500;transition:background 0.2s}
+.hero-cta:hover{background:var(--teal)}
+.hero-cta-secondary{display:inline-flex;align-items:center;gap:0.5rem;background:var(--white);color:var(--navy);text-decoration:none;padding:0.75rem 1.5rem;border-radius:4px;font-size:0.9rem;font-weight:500;border:0.5px solid var(--border);transition:border-color 0.2s,color 0.2s}
+.hero-cta-secondary:hover{border-color:var(--teal);color:var(--teal)}
+.hero-links{display:flex;align-items:center;gap:1.5rem;margin-top:1.25rem}
+.hero-links a{color:var(--mid);font-size:0.875rem;text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:1px;transition:color 0.2s,border-color 0.2s}
+.hero-links a:hover{color:var(--teal);border-color:var(--teal)}
+
+.stats{background:var(--sand);padding:2.5rem;display:flex;gap:0;border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border)}
+.stat{flex:1;text-align:center;padding:1rem;border-right:0.5px solid var(--border)}
+.stat:last-child{border-right:none}
+.stat-num{font-family:'DM Serif Display',serif;font-size:2.25rem;color:var(--navy);display:block}
+.stat-label{font-size:0.8rem;color:var(--mid);margin-top:0.25rem;line-height:1.4}
+
+section{padding:4rem 2.5rem;max-width:860px;margin:0 auto}
+.section-label{font-size:0.75rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:1.5rem}
+h2{font-family:'DM Serif Display',serif;font-size:1.9rem;margin-bottom:1.5rem;line-height:1.25}
+
+.expertise-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0.75rem;margin-top:1rem}
+.expertise-tag{background:var(--sand);border:0.5px solid var(--border);border-radius:4px;padding:0.6rem 1rem;font-size:0.875rem;color:var(--navy)}
+
+.timeline{display:flex;flex-direction:column;gap:2.5rem}
+.timeline-item{display:grid;grid-template-columns:160px 1fr;gap:2rem;align-items:start}
+.timeline-meta{text-align:right}
+.timeline-company{font-size:0.875rem;font-weight:500;color:var(--navy)}
+.timeline-dates{font-size:0.78rem;color:var(--mid);margin-top:0.2rem}
+.timeline-role{font-family:'DM Serif Display',serif;font-size:1.1rem;margin-bottom:0.5rem}
+.timeline-wins{list-style:none;margin-top:0.75rem}
+.timeline-wins li{font-size:0.875rem;color:var(--mid);padding:0.35rem 0;border-top:0.5px solid var(--border);line-height:1.5}
+.timeline-wins li:first-child{border-top:none}
+.win-highlight{color:var(--teal);font-weight:500}
+
+.chat-section{background:var(--sand);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);padding:4rem 2.5rem}
+.chat-inner{max-width:860px;margin:0 auto}
+.chat-intro{font-size:1rem;color:var(--mid);margin-bottom:1.5rem;max-width:520px}
+.chat-window{background:var(--white);border:0.5px solid var(--border);border-radius:8px;padding:1.5rem;min-height:200px;max-height:360px;overflow-y:auto;display:flex;flex-direction:column;gap:0.75rem;margin-bottom:1rem}
+.msg{max-width:80%;padding:0.65rem 1rem;border-radius:6px;font-size:0.875rem;line-height:1.55}
+.msg-bot{background:var(--teal-lt);color:#0B3D2E;align-self:flex-start;border-bottom-left-radius:2px}
+.msg-user{background:var(--navy);color:var(--white);align-self:flex-end;border-bottom-right-radius:2px}
+.msg-typing{background:var(--teal-lt);color:#0B3D2E;align-self:flex-start;border-bottom-left-radius:2px;font-style:italic;opacity:0.7}
+.chat-input-row{display:flex;gap:0.5rem}
+.chat-input-row input{flex:1;border:0.5px solid var(--border);border-radius:4px;padding:0.65rem 1rem;font-size:0.875rem;font-family:'DM Sans',sans-serif;outline:none;background:var(--white);color:var(--navy)}
+.chat-input-row input:focus{border-color:var(--teal)}
+.chat-input-row button{background:var(--navy);color:var(--white);border:none;border-radius:4px;padding:0.65rem 1.25rem;font-size:0.875rem;font-family:'DM Sans',sans-serif;cursor:pointer;transition:background 0.2s;white-space:nowrap}
+.chat-input-row button:hover{background:var(--teal)}
+.chat-suggestions{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem}
+.chat-sug{background:var(--white);border:0.5px solid var(--border);border-radius:4px;padding:0.4rem 0.85rem;font-size:0.78rem;color:var(--mid);cursor:pointer;transition:border-color 0.2s,color 0.2s;font-family:'DM Sans',sans-serif}
+.chat-sug:hover{border-color:var(--teal);color:var(--teal)}
+
+footer{padding:2rem 2.5rem;border-top:0.5px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+footer p{font-size:0.8rem;color:var(--mid)}
+footer a{color:var(--teal);text-decoration:none;font-size:0.8rem}
+
+@media(max-width:600px){
+  nav{padding:1rem 1.25rem}
+  .nav-links{gap:1rem}
+  .hero{padding:3rem 1.25rem 2.5rem}
+  .timeline-item{grid-template-columns:1fr}
+  .timeline-meta{text-align:left}
+  .stats{flex-wrap:wrap}
+  .stat{flex:1 1 45%;border-right:none;border-bottom:0.5px solid var(--border)}
+  section{padding:3rem 1.25rem}
+  .chat-section{padding:3rem 1.25rem}
+  footer{flex-direction:column;gap:0.5rem;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-name">Emily Duffee</span>
+  <div class="nav-links">
+    <a href="#expertise">Expertise</a>
+    <a href="#experience">Experience</a>
+    <a href="#ask">Ask Emily</a>
+    <a class="nav-resume" href="EDuffee_Resume2026.pdf" download>Download résumé ↓</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <p class="hero-eyebrow">Product Marketing Director · Healthcare</p>
+  <h1 class="hero-headline">20 years turning <em>insights into impact</em> across healthcare marketing</h1>
+  <p class="hero-sub">I help healthcare companies connect with the right people — agents, carriers, and consumers — through research-driven strategy, sharp positioning, and stories that actually move the needle.</p>
+  <div class="hero-actions">
+    <a class="hero-cta" href="mailto:emilybduffee@gmail.com">Get in touch →</a>
+    <a class="hero-cta-secondary" href="EDuffee_Resume2026.pdf" download>Download résumé ↓</a>
+  </div>
+  <div class="hero-links">
+    <a href="https://linkedin.com/in/eduffee" target="_blank">LinkedIn</a>
+    <a href="mailto:emilybduffee@gmail.com">emilybduffee@gmail.com</a>
+    <a href="tel:6123918743">612-391-8743</a>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat">
+    <span class="stat-num">32k+</span>
+    <div class="stat-label">Insurance agents engaged via AI-powered content hub</div>
+  </div>
+  <div class="stat">
+    <span class="stat-num">900+</span>
+    <div class="stat-label">New platform users won in a single year</div>
+  </div>
+  <div class="stat">
+    <span class="stat-num">20</span>
+    <div class="stat-label">New enterprise clients in just two weeks</div>
+  </div>
+  <div class="stat">
+    <span class="stat-num">98%</span>
+    <div class="stat-label">Top-box client experience scores, two years running</div>
+  </div>
+</div>
+
+<section id="expertise">
+  <p class="section-label">What I do</p>
+  <h2>Where strategy meets storytelling</h2>
+  <p style="color:var(--mid);margin-bottom:1.5rem;font-size:0.95rem">I've spent two decades at the intersection of data and creativity — using consumer insights, behavioral science, and sharp writing to build brands and go-to-market strategies that resonate.</p>
+  <div class="expertise-grid">
+    <div class="expertise-tag">Product Marketing</div>
+    <div class="expertise-tag">Brand Strategy</div>
+    <div class="expertise-tag">Go-to-Market Launch</div>
+    <div class="expertise-tag">Content Marketing</div>
+    <div class="expertise-tag">ACA Marketplace</div>
+    <div class="expertise-tag">Behavioral Science</div>
+    <div class="expertise-tag">Persona Development</div>
+    <div class="expertise-tag">Customer Journey Mapping</div>
+    <div class="expertise-tag">Healthcare Technology</div>
+    <div class="expertise-tag">AI Content Strategy</div>
+    <div class="expertise-tag">Sales Enablement</div>
+    <div class="expertise-tag">Consumer Health</div>
+    <div class="expertise-tag">Segmentation</div>
+    <div class="expertise-tag">Market Positioning</div>
+    <div class="expertise-tag">Group Health Benefits</div>
+    <div class="expertise-tag">Behavioral Health</div>
+  </div>
+</section>
+
+<section id="experience" style="border-top:0.5px solid var(--border)">
+  <p class="section-label">Career</p>
+  <h2>Where I've built things</h2>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-meta">
+        <div class="timeline-company">HealthSherpa</div>
+        <div class="timeline-dates">Oct 2021 – Present</div>
+      </div>
+      <div>
+        <div class="timeline-role">Product Marketing & Brand Director</div>
+        <p style="font-size:0.875rem;color:var(--mid)">Established and lead HealthSherpa's brand and go-to-market strategy — shaping market positioning and reaching key decision-makers at agency, carrier, and government organizations.</p>
+        <ul class="timeline-wins">
+          <li>Engaged <span class="win-highlight">&gt;32k insurance agents</span> and won &gt;900 new users in one year by building an AI-supported content hub</li>
+          <li>Gained <span class="win-highlight">20 new enterprise clients in 2 weeks</span> by influencing 5k+ cold leads to transition platforms</li>
+          <li>Leverages AI to optimize content strategy productivity at scale</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-meta">
+        <div class="timeline-company">Icario</div>
+        <div class="timeline-dates">Jun 2020 – Oct 2021</div>
+      </div>
+      <div>
+        <div class="timeline-role">Product Marketing & Content Manager</div>
+        <p style="font-size:0.875rem;color:var(--mid)">Owned go-to-market product strategy; created data-informed personas; translated complex technology capabilities into compelling sales messaging and positioning.</p>
+        <ul class="timeline-wins">
+          <li>Built data-informed personas to characterize customers and competitors</li>
+          <li>Executed marketing communications and training plans for sales enablement</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-meta">
+        <div class="timeline-company">Cigna</div>
+        <div class="timeline-dates">Jun 2008 – Apr 2019</div>
+      </div>
+      <div>
+        <div class="timeline-role">Sr. Marketing Manager (National Accounts & Online Experience)</div>
+        <p style="font-size:0.875rem;color:var(--mid)">Over 11 years, led marketing strategy across national accounts and Cigna's full digital experience — from integrated digital and mobile to social and gamified products.</p>
+        <ul class="timeline-wins">
+          <li>Achieved <span class="win-highlight">98% top-box scores</span> for client experience at Cigna's Client Forum, two years running</li>
+          <li>Established Cigna as a national thought leader through conference and event strategy</li>
+          <li>Owned strategy for integrated digital, mobile, social, and gamified products</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="chat-section" id="ask">
+  <div class="chat-inner">
+    <p class="section-label">AI-Powered Q&A</p>
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.9rem;margin-bottom:0.75rem">Ask me anything</h2>
+    <p class="chat-intro">Have a question about my background, skills, or what I could bring to your team? Ask away — this assistant knows my story.</p>
+    <div class="chat-suggestions">
+      <button class="chat-sug" onclick="askSuggestion(this)">What's your biggest career win?</button>
+      <button class="chat-sug" onclick="askSuggestion(this)">How have you used AI in marketing?</button>
+      <button class="chat-sug" onclick="askSuggestion(this)">What roles are you targeting?</button>
+      <button class="chat-sug" onclick="askSuggestion(this)">Tell me about your healthcare expertise</button>
+    </div>
+    <div class="chat-window" id="chatWindow">
+      <div class="msg msg-bot">Hi! I'm Emily's AI assistant. Ask me anything about her background, skills, or what she can bring to your team. 👋</div>
+    </div>
+    <div class="chat-input-row">
+      <input type="text" id="chatInput" placeholder="Ask a question about Emily..." onkeydown="if(event.key==='Enter')sendChat()" />
+      <button onclick="sendChat()">Send →</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Emily Duffee · Prior Lake, MN</p>
+  <a href="mailto:emilybduffee@gmail.com">emilybduffee@gmail.com</a>
+</footer>
+
+<script>
+const EMILY_CONTEXT = `You are an AI assistant on Emily Duffee's personal marketing portfolio website. Your job is to answer questions about Emily warmly, professionally, and concisely — as if you know her well.
+
+Here is Emily's full background:
+
+NAME: Emily Duffee
+CONTACT: emilybduffee@gmail.com | 612-391-8743 | linkedin.com/in/eduffee
+LOCATION: Prior Lake, MN
+
+SUMMARY: Seasoned healthcare marketer with 20 years of experience using research and consumer insights to understand people as individuals and design creative, customer-centered go-to-market strategies that build relationships and drive results. Jazzed by segmentation, behavioral science, persona building, customer journey mapping, design thinking, content, branding, brand positioning, brand architecture, experience design, strategic planning, and health advocacy.
+
+AREAS OF EXPERTISE: Product Marketing, Brand Marketing, Content Marketing, Go-to-Market Launch, Enterprise Product Strategy, Healthcare technology, ACA Marketplace, Group health benefits, Behavioral health, Consumer health engagement, Consumer experience, AI content strategy.
+
+EXPERIENCE:
+
+1. Product Marketing & Brand Director — HealthSherpa (Oct 2021 – Present)
+- Establishes and leads HealthSherpa's brand and go-to-market strategy
+- Shapes market positioning and leverages compelling storytelling to reach key decision-makers at agency, carrier, and government organizations
+- Leverages AI to optimize content strategy productivity
+- Engaged >32k insurance agents and won >900 new users in one year by building an AI-supported content hub with targeted user resources
+- Gained 20 new enterprise clients in 2 weeks by influencing >5k cold leads to transition platforms
+
+2. Product Marketing and Content Manager — Icario (June 2020 – October 2021)
+- Owned go-to-market product strategy
+- Created data-informed personas to characterize customers and competitors
+- Translated capabilities of technology solutions into sales messaging and positioning
+- Executed marketing communications and training plans to drive sales enablement
+
+3. Sr. Marketing Manager, U.S. National Accounts — Cigna (May 2016 – Apr 2019)
+- Established Cigna as a thought leader on a national level through conference and event strategy
+- Achieved 98% top box scores for client experience at Cigna's annual Client Forum two years in a row
+
+4. Sr. Marketing Manager, Online Experience — Cigna (June 2008 – May 2016)
+- Owned marketing strategy and communications for Cigna's online experience including integrated digital, mobile, social, and gamified products
+
+EDUCATION:
+- Master of Library and Information Science, Dominican University (2007)
+- Bachelor of Arts, English and Scandinavian Studies, Gustavus Adolphus College (2003)
+
+HARD SKILLS: Marketing strategy, communications, project management, account management, strategic planning, research, data analysis, market insights, storytelling, customer experience, vendor management, social media, knowledge management, content development, budget management, public speaking, MS Office Suite, Google Suite, Adobe Creative Suite.
+
+SOFT SKILLS: Mission orientation, cross-functional leadership, attention to detail, creative problem solving, critical thinking, emotional intelligence, mentorship, adaptability, ethical judgment.
+
+WHAT EXCITES HER: Segmentation, behavioral science, persona building, customer journey mapping, design thinking, content, branding, brand positioning, brand architecture, experience design, strategic planning, and health advocacy.
+
+WHAT SHE'S GOOD AT: Creative thinking, problem solving, information synthesis, storytelling, communicating complex ideas, leading cross-functional teams, making decisions, project management, account management, learning quickly, motivating others, building relationships, and getting things done.
+
+Answer questions about Emily concisely (2-4 sentences unless more detail is needed). Be warm, confident, and specific. If asked something not covered, say you're not sure but invite them to reach out directly at emilybduffee@gmail.com.`;
+
+let chatHistory = [];
+
+async function sendChat() {
+  const input = document.getElementById('chatInput');
+  const msg = input.value.trim();
+  if (!msg) return;
+  input.value = '';
+  appendMsg(msg, 'user');
+  chatHistory.push({role:'user', content: msg});
+  const typing = appendMsg('Thinking...', 'typing');
+  try {
+    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({
+        model:'claude-sonnet-4-6',
+        max_tokens:1000,
+        system: EMILY_CONTEXT,
+        messages: chatHistory
+      })
+    });
+    const data = await resp.json();
+    const reply = data.content.map(b => b.text||'').join('');
+    typing.remove();
+    appendMsg(reply, 'bot');
+    chatHistory.push({role:'assistant', content: reply});
+  } catch(e) {
+    typing.remove();
+    appendMsg("Sorry, I'm having trouble connecting right now. Please reach out directly at emilybduffee@gmail.com!", 'bot');
+  }
+}
+
+function appendMsg(text, type) {
+  const win = document.getElementById('chatWindow');
+  const div = document.createElement('div');
+  div.className = type === 'user' ? 'msg msg-user' : type === 'typing' ? 'msg msg-typing' : 'msg msg-bot';
+  div.textContent = text;
+  win.appendChild(div);
+  win.scrollTop = win.scrollHeight;
+  return div;
+}
+
+function askSuggestion(btn) {
+  document.getElementById('chatInput').value = btn.textContent;
+  sendChat();
+}
+</script>
+</body>
+</html>
